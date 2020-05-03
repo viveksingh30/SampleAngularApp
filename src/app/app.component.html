@@ -1,0 +1,28 @@
+<!-- <app-servers></app-servers> -->
+
+<!-- <app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <app-recipes></app-recipes>
+            <app-shopping-list></app-shopping-list>
+        </div>
+    </div>
+</div> -->
+
+<!-- Code to learn component Communication using @Output and @Input -->
+
+<div class="container">
+  <app-cockpit
+    (serverCreated)="onServerAdded($event)"
+    (bpCreated)="onBlueprintAdded($event)"
+  >
+  </app-cockpit>
+
+  <hr />
+  <div class="row">
+    <div class="col-x2-12">
+      <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement"> </app-server-element>
+    </div>
+  </div>
+</div>
